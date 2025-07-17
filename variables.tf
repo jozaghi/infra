@@ -7,3 +7,8 @@ variable "aws_profile" {
   type = string
   default = "default"
 }
+
+variable "azs" {
+  type = list(string)
+  description = "Availability Zones for the VPC"
+}
