@@ -21,3 +21,10 @@ module "ecs" {
   region = var.aws_region
 }
 
+module "alb" {
+  source = "./modules/alb"
+
+  vpc_id              = module.vpc.vpc_id
+  public_subnet_ids   = module.vpc.public_subnets_ids
+  alb_security_group_id = module.security_group.alb_sg_id
+}
